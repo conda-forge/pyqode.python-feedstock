@@ -19,7 +19,7 @@ requirements:
   host:
     - docutils
     - jedi
-    - pep8
+    - pycodestyle
     - pip
     - pyflakes
     - pyqode.core
@@ -29,7 +29,7 @@ requirements:
   run:
     - docutils
     - jedi
-    - pep8
+    - pycodestyle
     - pyflakes
     - pyqode.core
     - pyqode.qt
