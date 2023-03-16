@@ -14,8 +14,7 @@ source:
 build:
   number: 1
   noarch: python
-  preserve_egg_dir: True
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv "
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
