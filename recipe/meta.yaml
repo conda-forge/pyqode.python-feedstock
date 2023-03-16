@@ -8,6 +8,8 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 17079b014562dafa608eed210f73dc39b7a6d44d4e0bdbabff7c45b8d184e074
+  patches:
+    - pyflakes25_fix.patch
 
 build:
   number: 0
