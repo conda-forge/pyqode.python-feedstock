@@ -8,9 +8,6 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: a29eb274f2f5a4e25daf4ab7fae42c539d72d480acdcb8bb9ae8ac6a669948ec
-  patches:
-    - pyflakes25_fix.patch
-    - version_setup.py.patch
 
 build:
   number: 0
@@ -19,24 +16,18 @@ build:
 
 requirements:
   host:
-    - docutils
-    - jedi
-    - pycodestyle
+    - flit-core
     - pip
-    - pyflakes
-    - pyqode.core
-    - pyqode.qt
-    - python >=3.6
-    - setuptools
+    - python >=3.7
   run:
+    - autopep8
     - docutils
     - jedi
     - pycodestyle
     - pyflakes
     - pyqode.core
-    - pyqode.qt
-    - python >=3.6
-    - setuptools
+    - python >=3.7
+    - qtpy
 
 test:
   imports:
