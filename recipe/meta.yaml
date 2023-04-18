@@ -1,42 +1,33 @@
 {% set name = "pyqode.python" %}
-{% set version = "2.12.1" %}
+{% set version = "4.0.2" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 17079b014562dafa608eed210f73dc39b7a6d44d4e0bdbabff7c45b8d184e074
-  patches:
-    - pyflakes25_fix.patch
-    - version_setup.py.patch
+  sha256: a29eb274f2f5a4e25daf4ab7fae42c539d72d480acdcb8bb9ae8ac6a669948ec
 
 build:
-  number: 1
+  number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - docutils
-    - jedi
-    - pycodestyle
+    - flit-core
     - pip
-    - pyflakes
-    - pyqode.core
-    - pyqode.qt
-    - python >=3.6
-    - setuptools
+    - python >=3.7
   run:
+    - autopep8
     - docutils
     - jedi
     - pycodestyle
     - pyflakes
     - pyqode.core
-    - pyqode.qt
-    - python >=3.6
-    - setuptools
+    - python >=3.7
+    - qtpy
 
 test:
   imports:
