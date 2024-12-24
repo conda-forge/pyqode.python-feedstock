@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: a29eb274f2f5a4e25daf4ab7fae42c539d72d480acdcb8bb9ae8ac6a669948ec
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -18,7 +18,7 @@ requirements:
   host:
     - flit-core
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
     - autopep8
     - docutils
@@ -26,7 +26,7 @@ requirements:
     - pycodestyle
     - pyflakes
     - pyqode.core
-    - python >=3.7
+    - python >={{ python_min }}
     - qtpy
 
 test:
@@ -41,6 +41,7 @@ test:
     - pyqode.python.widgets
   requires:
     - pyqt
+    - python {{ python_min }}
 
 about:
   home: https://github.com/pyQode/pyqode.python
